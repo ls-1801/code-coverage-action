@@ -14,7 +14,7 @@ const getChangedFilesCoverage = require("./services/changedFilesCoverage");
 
 const runCodeCoverage = async (coverage) => {
   const diff = await getBaseCoverageDiff(coverage);
-  core.info(`Code coverage diff: ${diff}%`);
+  core.info(`Code coverage diffaaaaaa: ${diff}%`);
 
   const changedFilesCoverage = await getChangedFilesCoverage(coverage);
   await sendSummaryComment(changedFilesCoverage, diff, coverage.percentage);
