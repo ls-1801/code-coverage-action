@@ -7,7 +7,10 @@ const { getWorkspacePath } = require("../input");
 const getChangedFilesCoverage = async (coverage) => {
   const pullRequestContext = getPullRequestContext();
 
-  if (!pullRequestContext) return coverage.data;
+  if (!pullRequestContext) { 
+    core.warn(`Could not fetch pr context`);  
+    return coverage.data
+  };
 
   const octokit = await getOctokit();
 
