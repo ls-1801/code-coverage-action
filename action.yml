@@ -40,7 +40,7 @@ outputs:
   percentage:
     description: "Total Percentage coverage"
   diff:
-    description: "Percantage difference between head branch"
+    description: "Percentage difference between head branch"
 runs:
   using: "node20"
   main: "dist/index.js"
