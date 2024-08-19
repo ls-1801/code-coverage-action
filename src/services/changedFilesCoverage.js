@@ -18,11 +18,13 @@ const getChangedFilesCoverage = async (coverage) => {
     pullNumber
   });
 
+  core.info(`changed files: ${changedFiles}`);
+
   const workspacePath = getWorkspacePath();
   const changedFilesCoverage = coverage.data.reduce(
     (allFiles, { file, lines }) => {
       const filePath = workspacePath ? path.join(workspacePath, file) : file;
-
+      core.info(`changed files: ${filePath}`);
       const changedFile = changedFiles.find(
         ({ filename }) => filename === filePath
       );
@@ -41,7 +43,7 @@ const getChangedFilesCoverage = async (coverage) => {
     },
     []
   );
-
+  core.info(`changed files: ${changedFilesCoverage}`);
   return changedFilesCoverage;
 };
 
